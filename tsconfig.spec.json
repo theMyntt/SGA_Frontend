@@ -3,12 +3,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": [
-      "jasmine"
-    ]
+    "types": ["jasmine"]
   },
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+  "baseUrl": "./",
+  "paths": {
+    "@pages/*": ["src/app/pages/*"],
+    "@components/*": ["src/app/components/*"],
+    "@guards/*": ["src/app/guards/*"],
+    "@interfaces/*": ["src/app/interfaces/*"],
+    "@app/*": ["src/app/*"]
+  },
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }
